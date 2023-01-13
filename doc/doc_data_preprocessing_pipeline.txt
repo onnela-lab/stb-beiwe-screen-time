@@ -1,0 +1,50 @@
+
+# ------------------------------------------------------------------------------
+1. Prepare materfile with start and end of a study
+
+1.1. Prepare masterfile with study start and end date 
+- Use: /R/data_preprocessing/get_study_start_end_masterfile_Y-m-d.R
+- Output: /results/beiwe_id_list_with_dates_Y-m-d.csv"
+- Output: /data_nock_lab/data_participants_other_processed/demog_clean.csv
+- Output: /data_nock_lab/data_participants_other_processed/beiwe_id_masterfile.csv"
+
+
+# ------------------------------------------------------------------------------
+2. Process Beiwe power state logs data
+
+2.1 Combine Beiwe power state logs across participants: 
+- Use: /R/data_preprocessing/process_power_state_combine_downloaded_files_Y_m_d.R
+- Output: /data_beiwe_processed/power_state/power_state_processed.rds
+- Output: /data_beiwe_processed/power_state/beiwe_id_op_sys.rds
+
+2.2 Estimate screen time events from power state logs: 
+- Use: /R/data_preprocessing/process_power_state_estimate_screen_time_Y_m_d.R
+- Output: /data_beiwe_processed/power_state/estimated_screen_time.rds
+
+2.3 Get t1min (minute-level) screen time information from screen time events: 
+- Use: /R/data_preprocessing/get_screen_time_t1min_Y_m_d.R
+- Output: /data_beiwe_processed/power_state/screen_time_t1min.rds
+
+2.4 Get t24hr (day-level) screen time daily measures (UTC time zone): 
+- Use: /R/data_preprocessing/get_screen_time_t24hr_Y_m_d.R
+- Output: /data_beiwe_processed/power_state/screen_time_t24h.rds
+
+2.5 Get t1min valid minute label (iOS only): 
+- Use: /R/data_preprocessing/get_valid_minute_t1min_Y_m_d.R
+- Output: /data_beiwe_processed/power_state/valid_minute_t1min_ios.rds
+
+2.6 Get t24hr (day-level) valid day label: 
+- Use: /R/data_preprocessing/get_valid_day_t24hr_2022-11-07.R
+- Output: /data_beiwe_processed/power_state/power_state_t24hr_valid_day.rds
+
+
+# ------------------------------------------------------------------------------
+3. Define statistical analysis sample 
+
+3.1 Define statistical analysis sample
+- Use: /R/data_preprocessing/define_analysis_sample_t24h_Y_m_d.R
+- Output: /results_objects/analysis_sample_beiwe_id.rds
+- Output: /results_objects/analysis_sample_power_state_t24h.rds
+
+
+

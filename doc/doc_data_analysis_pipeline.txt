@@ -1,0 +1,32 @@
+1. Generate table 1 
+- Use: /R/data_analysis/table_1_Y-m-d.R
+- Output: /results_tables/table_1.csv
+
+2. Estimate population-level values of day-level measures with the use of LMMs:
+- Estimate population-level values;
+- Estimate population-level values, effect of OS;
+- Estimate population-level values, effect of relative week 0 vs weeks 4+;
+- Estimate population-level values, effect of relative weeks 0-3 vs weeks 4+. 
+- Use: /R/data_analysis/estimate_screen_time_t24hr_measures_Y-m-d.R
+- Output: /results_tables/estimated_screen_time_t24hr_measures.csv
+
+3. Format table with the outcome of population-level values of day-level measures estimated with the use of LMMs:
+- Use: /R/data_analysis/table_screen_time_t24hr_measures_Y-m-d.R
+- Output: printed to the console and copy-pasted to the manuscript
+
+4. Plot population-level values of day-level measures over time 
+- Use: /R/data_analysis/plot_screen_time_t24hr_measures_over_time_Y-m-d.R
+- Output: /results_figures/screen_time_measures_t24hr.jpeg
+
+5. Plot minute-level values as heatmaps
+- Use: /R/data_analysis/plot_screen_time_t24hr_measures_over_time_Y-m-d.R
+- Output: /results_figures/minutelevel_screen_time.jpeg
+
+6. Estimate a time-varying effect of a daylight time change on minute-level screen time with function-on-scalar generalized linear mixed-effects regression
+- Use: /R/data_analysis/estimate_screen_time_t1min_daylight_start_fLMM_Y-m-d.R
+- Use: /R/data_analysis/estimate_screen_time_t1min_daylight_end_fLMM_Y-m-d.R
+- Output: multiple model output summary objects stored in /results_objects/
+
+7. Plot functional coefficient results from estimating a time-varying effect of a daylight time change on minute-level screen time with function-on-scalar generalized linear mixed-effects regression
+- Use: /R/data_analysis/plot_screen_time_t1min_daylight_start_end_fLMM_Y-m-d.R
+- Output: /results_figures/screen_time_daylight_start_end_fLMM_subset.jpeg
